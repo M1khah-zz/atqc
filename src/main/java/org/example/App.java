@@ -1,9 +1,12 @@
 package org.example;
 
+import java.util.Arrays;
+
 /**
  * Hello world!
  *
  */
+
 public abstract class App {
 
 
@@ -13,14 +16,14 @@ public abstract class App {
         System.out.println(admin);
     }
 
-    public static void substract(int a , int  b) {
+    public static void substract(int a, int b) {
         int result = a - b;
         System.out.println(result);
     }
 
-    public int biggest(int a, int b, int c) {
-        int nums[] = {a, b, c};
-        return nums[nums.length - 1];
+    public static void biggest(int[] args) {
+        Arrays.sort(args);
+        System.out.println(args[args.length - 1]);
     }
 
     public String even(int a) {
