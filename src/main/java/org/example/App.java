@@ -14,6 +14,8 @@ public abstract class App {
         fiveToOne();
         table(7);
         sumArray(new int[]{3, 4, 5});
+        sumArray1(new int[]{3, 4, 5});
+        sumArray2(new int[]{3, 4, 5});
     }
 
     public static void names(String name) {
@@ -61,6 +63,22 @@ public abstract class App {
     public static void sumArray(int[] arr) {
         int sum = IntStream.of(arr).sum();
         System.out.println("The sum is " + sum);
+    }
+
+    public static void sumArray1(int[] arr) {
+        int sum = 0;
+        for (int i : arr) {
+            sum = sum + i;
+        }
+        System.out.println("The sum is " + sum + " in more educational way");
+    }
+
+    public static void sumArray2(int[] arr) {
+        int sum = 0;
+        for (int e = 0; e < arr.length; e++) {
+            sum = sum + arr[e];
+        }
+        System.out.println("The sum is " + sum + " in even more educational way");
     }
 
     public static  void calculator(){
