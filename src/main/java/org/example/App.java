@@ -1,17 +1,22 @@
 package org.example;
 
 import java.util.Arrays;
-
-/**
- * Hello world!
- *
- */
+import java.util.stream.IntStream;
 
 public abstract class App {
 
 
     public static void main(String[] args) {
-        String name = "John";
+        names("John");
+        substract(1, 3);
+        biggest(new int[]{3, 4, 5});
+        even(5);
+        fiveToOne();
+        table(7);
+        sumArray(new int[]{3, 4, 5});
+    }
+
+    public static void names(String name) {
         String admin = name;
         System.out.println(admin);
     }
@@ -26,14 +31,39 @@ public abstract class App {
         System.out.println(args[args.length - 1]);
     }
 
-    public String even(int a) {
+    public static void even(int a) {
         String result = "Number is ";
         if (a % 2 == 0) {
             result += "even";
         }
-        else if (a % 2 != 0) {
+        else  {
             result += "odd";
         }
-        return result;
+        System.out.println(result);
+    }
+
+    public static void fiveToOne(){
+        for (int x = 5; x >= 1; x--){
+            System.out.print(x + " ");
+        }
+        System.out.print("\n");
+    }
+
+    public static void table(int x) {
+        int[] arr = {1,2,3,4,5,6,7,8,9,10};
+        for(int num : arr) {
+            System.out.println(x + " * " + num + " = " + num*x);
+        }
+//        arr.forEach(e -> System.out.println(x  + "*" + e + "=" + x*e ); <<<<<<<<<<<< Please explain on mistakes
+//        arr.forEach((e) -> { System.out.println(x  + "*" + e + "=" + x * e); });
+    }
+
+    public static void sumArray(int[] arr) {
+        int sum = IntStream.of(arr).sum();
+        System.out.println("The sum is " + sum);
+    }
+
+    public static  void calculator(){
+
     }
 }
