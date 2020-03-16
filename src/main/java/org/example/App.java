@@ -18,7 +18,8 @@ public abstract class App {
         sumArray2(new int[]{3, 4, 5});
     }
 
-    public static void names(String name) {
+    public static void names(String input) {
+        String name = input;
         String admin = name;
         System.out.println(admin);
     }
@@ -56,8 +57,6 @@ public abstract class App {
         for(int num : arr) {
             System.out.println(x + " * " + num + " = " + num*x);
         }
-//        arr.forEach(e -> System.out.println(x  + "*" + e + "=" + x*e ); <<<<<<<<<<<< Please explain on mistakes
-//        arr.forEach((e) -> { System.out.println(x  + "*" + e + "=" + x * e); });
     }
 
     public static void sumArray(int[] arr) {
@@ -68,7 +67,7 @@ public abstract class App {
     public static void sumArray1(int[] arr) {
         int sum = 0;
         for (int i : arr) {
-            sum = sum + i;
+            sum += i;
         }
         System.out.println("The sum is " + sum + " in more educational way");
     }
