@@ -1,6 +1,6 @@
 #target folders
 target/
+.idea/
 
 #redundant files
 *.iml
-*.idea

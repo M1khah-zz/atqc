@@ -80,7 +80,10 @@ public abstract class App {
         System.out.println("The sum is " + sum + " in even more educational way");
     }
 
-    public static  void calculator(){
+    public static  void calculator(int[] args) {
 
     }
+//    1. Убрать .idea, iml, target из проекта. если пока не знаешь как - сделаешь это после лекции Сережи по гиту.
+//3. Task 3: попробуй написать свою сортировку, не используя метод sort();
+//4. Task 6: почему присутствует закоментированый код? можно сделать проще с обычным циклом for, подумай как
 }
