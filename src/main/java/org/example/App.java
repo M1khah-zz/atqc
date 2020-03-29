@@ -11,8 +11,8 @@ public abstract class App {
     public static void main(String[] args) {
         names("John");
         substract(1, 3);
-        biggest(new int[]{3, 4, 5});
-        biggest_bubble_sort(new int[]{3, 4, 5});
+        biggest(new int[]{3, 4, 5, 6, 7});
+        biggest_bubble_sort(new int[]{3, 4, 5, 6, 7, 8});
         even(5);
         fiveToOne();
         table(7);
@@ -71,6 +71,10 @@ public abstract class App {
 
     public static void table(int x) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        for (int e = 1; e <= arr.length; e++) {
+            out.println(x + " * " + e + " = " + e * x);
+        }
+        out.println();
         for (int num : arr) {
             out.println(x + " * " + num + " = " + num * x);
         }
