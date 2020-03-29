@@ -4,12 +4,15 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.Scanner;
 
+import static java.lang.System.*;
+
 public abstract class App {
 
     public static void main(String[] args) {
         names("John");
         substract(1, 3);
         biggest(new int[]{3, 4, 5});
+        biggest_bubble_sort(new int[]{3, 4, 5});
         even(5);
         fiveToOne();
         table(7);
@@ -22,17 +25,31 @@ public abstract class App {
     public static void names(String input) {
         String name = input;
         String admin = name;
-        System.out.println(admin);
+        out.println(admin);
     }
 
     public static void substract(int a, int b) {
         int result = a - b;
-        System.out.println(result);
+        out.println(result);
+    }
+
+    public static void biggest_bubble_sort(int[] args) {
+        int temp;
+        for(int i = 0; i  < args.length -1 ; i++) {
+            for(int e = 0; e < args.length -1; e++) {
+                if (args[i] < args[e + 1]) {
+                    temp = args[e + 1];
+                    args[e + 1] = args[i];
+                    args[i] = temp;
+                }
+            }
+        }
+        System.out.println(args[0]);
     }
 
     public static void biggest(int[] args) {
         Arrays.sort(args);
-        System.out.println(args[args.length - 1]);
+        out.println(args[args.length - 1]);
     }
 
     public static void even(int a) {
@@ -42,26 +59,26 @@ public abstract class App {
         } else {
             result += "odd";
         }
-        System.out.println(result);
+        out.println(result);
     }
 
     public static void fiveToOne() {
         for (int x = 5; x >= 1; x--) {
-            System.out.print(x + " ");
+            out.print(x + " ");
         }
-        System.out.print("\n");
+        out.print("\n");
     }
 
     public static void table(int x) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         for (int num : arr) {
-            System.out.println(x + " * " + num + " = " + num * x);
+            out.println(x + " * " + num + " = " + num * x);
         }
     }
 
     public static void sumArray(int[] arr) {
         int sum = IntStream.of(arr).sum();
-        System.out.println("The sum is " + sum);
+        out.println("The sum is " + sum);
     }
 
     public static void sumArray1(int[] arr) {
@@ -69,7 +86,7 @@ public abstract class App {
         for (int i : arr) {
             sum += i;
         }
-        System.out.println("The sum is " + sum + " in more educational way");
+        out.println("The sum is " + sum + " in more educational way");
     }
 
     public static void sumArray2(int[] arr) {
@@ -77,17 +94,17 @@ public abstract class App {
         for (int e = 0; e < arr.length; e++) {
             sum = sum + arr[e];
         }
-        System.out.println("The sum is " + sum + " in even more educational way");
+        out.println("The sum is " + sum + " in even more educational way");
     }
 
     public static void calculator() {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(in);
         int result;
-        System.out.println("Enter first number");
+        out.println("Enter first number");
         int num1 = scan.nextInt();
-        System.out.println("Enter operation");
+        out.println("Enter operation");
         char operation = scan.next().charAt(0);
-        System.out.println("Enter second number");
+        out.println("Enter second number");
         int num2 = scan.nextInt();
         switch (operation) {
             case '+':
@@ -105,6 +122,6 @@ public abstract class App {
             default:
                 throw new IllegalStateException("Unexpected value: " + operation);
         }
-    System.out.println("Result:" + result);
+    out.println("Result:" + result);
     }
 }
