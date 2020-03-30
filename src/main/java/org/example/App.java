@@ -74,10 +74,6 @@ public abstract class App {
         for (int e = 1; e <= arr.length; e++) {
             out.println(x + " * " + e + " = " + e * x);
         }
-        out.println();
-        for (int num : arr) {
-            out.println(x + " * " + num + " = " + num * x);
-        }
     }
 
     public static void sumArray(int[] arr) {
@@ -96,7 +92,7 @@ public abstract class App {
     public static void sumArray2(int[] arr) {
         int sum = 0;
         for (int e = 0; e < arr.length; e++) {
-            sum = sum + arr[e];
+            sum += arr[e];
         }
         out.println("The sum is " + sum + " in even more educational way");
     }
