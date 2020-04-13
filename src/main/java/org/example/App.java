@@ -2,9 +2,8 @@ package org.example;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
-import java.util.Scanner;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public abstract class App {
 
@@ -19,7 +18,7 @@ public abstract class App {
         sumArray(new int[]{3, 4, 5});
         sumArray1(new int[]{3, 4, 5});
         sumArray2(new int[]{3, 4, 5});
-        calculator();
+        Calculator.calc();
     }
 
     public static void names(String input) {
@@ -95,33 +94,5 @@ public abstract class App {
             sum += arr[e];
         }
         out.println("The sum is " + sum + " in even more educational way");
-    }
-
-    public static void calculator() {
-        Scanner scan = new Scanner(in);
-        int result;
-        out.println("Enter first number");
-        int num1 = scan.nextInt();
-        out.println("Enter operation");
-        char operation = scan.next().charAt(0);
-        out.println("Enter second number");
-        int num2 = scan.nextInt();
-        switch (operation) {
-            case '+':
-                result = num1+num2;
-                break;
-            case '-':
-                result = num1-num2;
-                break;
-            case '*':
-                result = num1*num2;
-                break;
-            case '/':
-                result = num1/num2;
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + operation);
-        }
-    out.println("Result:" + result);
     }
 }
